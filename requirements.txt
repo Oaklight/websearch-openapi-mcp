@@ -1,4 +1,4 @@
-toolregistry[mcp,openapi]>=0.4.12
+toolregistry[hub,mcp,openapi]>=0.4.14
 dotenv
 fastapi
 uvicorn
