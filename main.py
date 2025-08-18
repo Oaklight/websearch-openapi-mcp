@@ -10,7 +10,9 @@ from fastmcp import FastMCP
 from pydantic import BaseModel, Field
 from toolregistry.hub import (
     Calculator,
+    DateTime,
     Fetch,
+    ThinkTool,
     WebSearchBing,
     WebSearchGoogle,
     WebSearchSearXNG,
@@ -24,10 +26,12 @@ class CalcEvaluateRequest(BaseModel):
         example="26 * 9 / 5 + 32",
     )
 
+
 class CalcListAllowedFnsRequest(BaseModel):
     with_help: bool = Field(
         False, description="Include help messages for each function"
     )
+
 
 class CalcHelpRequest(BaseModel):
     fn_name: str = Field(
@@ -88,6 +92,29 @@ app = FastAPI(
     description="An API for accessing various tools like calculators, unit converters, and web search engines.",
     version="0.2.0",
 )
+
+
+@app.post(
+    "/think",
+    summary="Think about something",
+    description=ThinkTool.think.__doc__,
+    dependencies=security_dependency,
+    operation_id="think",
+)
+def think(thought: str) -> Dict[str, str]:
+    """Think about something."""
+    return ThinkTool.think(thought)
+
+
+@app.post(
+    "/time-now",
+    summary="Get current UTC time in ISO 8601 format, useful for time-sensitive operations",
+    dependencies=security_dependency,
+    operation_id="time-now",
+)
+def time_now() -> str:
+    """Get current UTC time in ISO 8601 format."""
+    return DateTime.now()
 
 
 @app.post(
@@ -172,6 +199,7 @@ def search_google(data: WebSearchRequest) -> List[Dict[str, str]]:
     )
     return results
 
+
 @app.post(
     "/web-search_bing",
     summary="Search Bing for a query",
@@ -188,6 +216,7 @@ def search_bing(data: WebSearchRequest) -> List[Dict[str, str]]:
         timeout=data.timeout,
     )
     return results
+
 
 @app.post(
     "/web-search_searxng",
