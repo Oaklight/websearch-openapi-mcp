@@ -8,8 +8,14 @@
 
 **请使用 ToolRegistry-Hub 服务器模式：**
 
+[![Docker Image Version](https://img.shields.io/docker/v/oaklight/toolregistry-hub-server?label=Docker&logo=docker)](https://hub.docker.com/r/oaklight/toolregistry-hub-server)
+[![PyPI Version](https://img.shields.io/pypi/v/toolregistry-hub?label=PyPI&logo=pypi)](https://pypi.org/project/toolregistry-hub/)
+[![GitHub Release](https://img.shields.io/github/v/release/OakLight/toolregistry-hub?label=GitHub&logo=github)](https://github.com/OakLight/toolregistry-hub/releases)
+
 - 📖 **中文文档**: https://toolregistry-hub.readthedocs.io/zh-cn/latest/server/
 - 🐳 **Docker 镜像**: https://hub.docker.com/r/oaklight/toolregistry-hub-server
+- 📦 **PyPI 包**: https://pypi.org/project/toolregistry-hub/
+- 🏷️ **GitHub 仓库**: https://github.com/OakLight/toolregistry-hub
 
 ToolRegistry-Hub 服务器模式提供了更全面且积极维护的工具服务器功能解决方案，具有更好的功能和持续支持。新的 Docker 镜像 `oaklight/toolregistry-hub-server` 替代了此仓库的功能。
 

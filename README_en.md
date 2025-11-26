@@ -8,9 +8,14 @@ This repository has been archived and is no longer actively maintained.
 
 **Please use ToolRegistry-Hub Server Mode instead:**
 
-- 📖 **English Documentation**: https://toolregistry-hub.readthedocs.io/en/latest/server/
-- 📖 **中文文档**: https://toolregistry-hub.readthedocs.io/zh-cn/latest/server/
+[![Docker Image Version](https://img.shields.io/docker/v/oaklight/toolregistry-hub-server?label=Docker&logo=docker)](https://hub.docker.com/r/oaklight/toolregistry-hub-server)
+[![PyPI Version](https://img.shields.io/pypi/v/toolregistry-hub?label=PyPI&logo=pypi)](https://pypi.org/project/toolregistry-hub/)
+[![GitHub Release](https://img.shields.io/github/v/release/OakLight/toolregistry-hub?label=GitHub&logo=github)](https://github.com/OakLight/toolregistry-hub/releases)
+
+- 📖 **Documentation**: https://toolregistry-hub.readthedocs.io/en/latest/server/
 - 🐳 **Docker Image**: https://hub.docker.com/r/oaklight/toolregistry-hub-server
+- 📦 **PyPI Package**: https://pypi.org/project/toolregistry-hub/
+- 🏷️ **GitHub Repository**: https://github.com/OakLight/toolregistry-hub
 
 ToolRegistry-Hub Server Mode provides a more comprehensive and actively maintained solution for tool server functionality with better features and ongoing support. The new Docker image `oaklight/toolregistry-hub-server` replaces this repository's functionality.
 
