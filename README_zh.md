@@ -2,6 +2,26 @@
 
 [English](README_en.md) | [中文](README_zh.md)
 
+## ⚠️ 仓库已归档
+
+此仓库已归档，不再积极维护。
+
+**请使用 ToolRegistry-Hub 服务器模式：**
+
+- 📖 **中文文档**: https://toolregistry-hub.readthedocs.io/zh-cn/latest/server/
+- 🐳 **Docker 镜像**: https://hub.docker.com/r/oaklight/toolregistry-hub-server
+
+ToolRegistry-Hub 服务器模式提供了更全面且积极维护的工具服务器功能解决方案，具有更好的功能和持续支持。新的 Docker 镜像 `oaklight/toolregistry-hub-server` 替代了此仓库的功能。
+
+---
+
+## 历史文档
+
+以下文档仅供历史参考。对于新的部署，请使用 ToolRegistry-Hub 服务器模式。
+
+<details>
+<summary>点击展开历史文档</summary>
+
 ## 使用 Python 启动服务器
 
 ```bash
@@ -34,7 +54,7 @@ docker compose up -d
 
 ## 浏览 API
 
-服务器启动后，OpenAPI模式下可以访问以下 URL：
+服务器启动后，OpenAPI 模式下可以访问以下 URL：
 
 1. **交互式 API 文档 (Swagger UI)**
    打开浏览器并访问：
@@ -51,7 +71,8 @@ docker compose up -d
 - **OpenAPI 模式（默认）**：
 
   ```yaml
-  command: ["python", "main.py", "--host=0.0.0.0", "--port=8000", "--mode=openapi"]
+  command:
+    ["python", "main.py", "--host=0.0.0.0", "--port=8000", "--mode=openapi"]
   ```
 
 - **MCP 可流式 HTTP 模式**：
@@ -63,13 +84,29 @@ docker compose up -d
 - **MCP SSE 模式**：
 
   ```yaml
-  command: ["python", "main.py", "--host=0.0.0.0", "--port=8000", "--mode=mcp", "--mcp-mode=sse"]
+  command:
+    [
+      "python",
+      "main.py",
+      "--host=0.0.0.0",
+      "--port=8000",
+      "--mode=mcp",
+      "--mcp-mode=sse",
+    ]
   ```
 
 - **MCP STDIO 模式**：
 
   ```yaml
-  command: ["python", "main.py", "--host=0.0.0.0", "--port=8000", "--mode=mcp", "--mcp-mode=stdio"]
+  command:
+    [
+      "python",
+      "main.py",
+      "--host=0.0.0.0",
+      "--port=8000",
+      "--mode=mcp",
+      "--mcp-mode=stdio",
+    ]
   ```
 
 ## 环境变量配置
@@ -108,3 +145,5 @@ docker compose up -d
 
 - **API 模式 (`openapi`)**：建议在生产环境中设置 `API_BEARER_TOKEN` 以保护端点，并正确配置 `SEARXNG_BASE_URL`。
 - **MCP 模式 (`mcp`)**：集成场景通常在未设置 `API_BEARER_TOKEN` 的情况下运行，并且根据需要确定 SearXNG 配置是否可选。
+
+</details>

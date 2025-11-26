@@ -2,6 +2,27 @@
 
 [中文](README_zh.md) | [English](README_en.md)
 
+## ⚠️ Repository Archived
+
+This repository has been archived and is no longer actively maintained.
+
+**Please use ToolRegistry-Hub Server Mode instead:**
+
+- 📖 **English Documentation**: https://toolregistry-hub.readthedocs.io/en/latest/server/
+- 📖 **中文文档**: https://toolregistry-hub.readthedocs.io/zh-cn/latest/server/
+- 🐳 **Docker Image**: https://hub.docker.com/r/oaklight/toolregistry-hub-server
+
+ToolRegistry-Hub Server Mode provides a more comprehensive and actively maintained solution for tool server functionality with better features and ongoing support. The new Docker image `oaklight/toolregistry-hub-server` replaces this repository's functionality.
+
+---
+
+## Legacy Documentation
+
+The following documentation is kept for historical reference only. For new deployments, please use ToolRegistry-Hub Server Mode.
+
+<details>
+<summary>Click to expand legacy documentation</summary>
+
 ## Start the Server via Python
 
 ```bash
@@ -49,7 +70,8 @@ The server supports running in multiple modes, configurable via command-line arg
 - **OpenAPI Mode (default)**:
 
   ```yaml
-  command: ["python", "main.py", "--host=0.0.0.0", "--port=8000", "--mode=openapi"]
+  command:
+    ["python", "main.py", "--host=0.0.0.0", "--port=8000", "--mode=openapi"]
   ```
 
 - **MCP Streamable HTTP Mode**:
@@ -61,7 +83,15 @@ The server supports running in multiple modes, configurable via command-line arg
 - **MCP SSE Mode**:
 
   ```yaml
-  command: ["python", "main.py", "--host=0.0.0.0", "--port=8000", "--mode=mcp", "--mcp-mode=sse"]
+  command:
+    [
+      "python",
+      "main.py",
+      "--host=0.0.0.0",
+      "--port=8000",
+      "--mode=mcp",
+      "--mcp-mode=sse",
+    ]
   ```
 
 ## Environment Variable Configuration
@@ -110,3 +140,5 @@ Ensure environment variables are configured based on the server mode:
 
 - **API Mode (`openapi`)**: It is recommended to set `API_BEARER_TOKEN` for production to secure endpoints and ensure proper configuration for `SEARXNG_BASE_URL`.
 - **MCP Mode (`mcp`)**: Integration scenarios often run without authentication (`API_BEARER_TOKEN` unset), and SearXNG may optionally be configured depending on the need.
+
+</details>
